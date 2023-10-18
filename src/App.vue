@@ -1,6 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <HelloWorld ref="hello" msg="Welcome to Your Vue.js App" />
+  <button @click="onChange">Click me</button>
 </template>
 
 <script>
@@ -10,6 +11,12 @@ export default {
   name: "App",
   components: {
     HelloWorld,
+  },
+  methods: {
+    onChange() {
+      console.log("test");
+      console.log(this.$refs.hello);
+    },
   },
 };
 </script>
